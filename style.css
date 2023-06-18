@@ -1,0 +1,127 @@
+.button {
+  background: orange;
+  border-radius: 12px;
+  box-shadow: 2px 4px 6px 3px rgba(0, 0, 0, .24);
+  border: 1px solid orange;
+  font-size: 16px;
+  line-height: 1.6;
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* ウィンドウ外のグレー背景 */
+.layer {
+  background: rgba(0, 0, 0, .2); /* 背景を薄くする */
+  width: 100%;
+  height: 100%;
+  position: fixed; /* 画面に固定するために指定 */
+  top: 0;
+  left: 0;
+}
+
+/* モーダルコンテンツ */
+.modal {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  min-width: 440px;
+}
+
+.modal__inner {
+  margin-top: 125px;
+  margin-bottom: 125px;
+  position: relative; /*×ボタンの位置の基準*/
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);/* モーダルウィンドウに影をつける */
+  border-radius: 13px; /* モーダルウィンドウの角を丸める */
+  display: block;
+  padding: 21px 8px 21px;
+  height: auto;
+}
+
+.modal__content {
+  padding-top: 15px;
+  padding-bottom: 23px;
+}
+
+/*ウィンドウを閉じるための×ボタン*/
+.modal__button-wrap {
+  position: absolute;　/*×ボタンの位置*/
+  right: 10px;
+  top: -28px;
+  display: inline-flex;
+}
+
+/*×ボタン*/
+.close-button {
+  position: relative;
+  width: 39px;
+  height: 39px;
+  background: orange;
+  border-radius: 50%;
+  padding: 0;
+  border: transparent;
+  cursor: pointer;
+}
+
+.close-button span {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  left: calc(50% - 12px);
+  top: 50%;
+  border-radius: 20px;
+}
+
+.close-button span:nth-child(1) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.close-button span:nth-child(2) {
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+/*モーダルウィンドウ非表示の状態*/
+.layer {
+  background: rgba(0, 0, 0, .2);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /*初期状態でlayer要素を最背面に配置*/
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  min-width: 440px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*ボタンクリック時にlayer要素にクラスを付与*/
+/*ボタン押下時にウィンドウとグレー背景の表示*/
+.layer.is-open {
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+}
+
+.layer.is-open .modal{
+  opacity: 1;
+  visibility: visible;
+}

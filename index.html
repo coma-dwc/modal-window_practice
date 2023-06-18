@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>モーダルウィンドウ表示練習</title>
+  </head>
+  <body>
+    <button class="button js-modal-button">ここをクリック</button>
+      <div class="layer js-modal">
+        <div class="modal">
+          <div class="modal__inner">
+            <!--×ボタンの表示-->
+            <div class="modal__button-wrap">
+              <button class="close-button js-close-button">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+            <div class="modal__contents">
+              <div class="modal__content">
+                このウィンドウが表示されれば成功<br>
+                ここに文章を表示。ここに文章を表示。ここに文章を表示。ここに文章を表示。ここに文章を表示。ここに文章を表示。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="app.js"></script>
+  </body>
+</html>
